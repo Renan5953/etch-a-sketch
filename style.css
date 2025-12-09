@@ -1,0 +1,27 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    height: 34rem;
+    width: 34rem;
+    border: 4px solid black;
+}
+
+.container div {
+    aspect-ratio: 1 / 1;
+    width: calc(100% / 16);
+    border: 1px solid darkgray;
+}
+
+.hovered {
+    background-color: black;
+}
