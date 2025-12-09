@@ -18,11 +18,11 @@ container.addEventListener('mouseover', (e) => {
 proportion.addEventListener('click', () => {
     container.replaceChildren();
 
-    let value = +prompt("Set the proportion of the grid:");
+    let value = +prompt("Set the grid dimension:");
 
     while ((!Number.isInteger(value)) || value > 100 || value <= 0) {
-        alert("Please, set a positive, integer number equal or smaller than 100.");
-        value = +prompt("Set the proportion of the grid:");
+        alert("Enter a positive integer less than or equal to 100.");
+        value = +prompt("Set the grid dimension:");
     }
 
     for (let i = 0; i < (value ** 2); i++) {
