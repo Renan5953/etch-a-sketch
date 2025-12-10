@@ -11,7 +11,7 @@ container.addEventListener('mouseover', (e) => {
     const target = e.target;
 
     if (target.className !== "container") {
-        target.classList = "hovered";
+        target.className = "hovered";
     }
 });
 
@@ -27,20 +27,15 @@ proportion.addEventListener('click', () => {
 
     for (let i = 0; i < (value ** 2); i++) {
         const block = document.createElement("div");
+        block.style.width = `calc(100% / ${value})`;
         container.appendChild(block);
     }
-
-    const blocks = document.querySelectorAll(".container div");
-    
-    blocks.forEach(item => {
-        item.style.width = `calc(100% / ${value})`;
-    });
 });
 
 clearBtn.addEventListener('click', () => {
-    const blocks = document.querySelectorAll(".container div");
+    const blocks = container.children;
 
-    blocks.forEach(item => {
-        item.classList = "";
-    });
+    for (let i = 0, length = blocks.length; i < length; i++) {
+        blocks[i].className = "";
+    }
 });
