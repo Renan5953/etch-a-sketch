@@ -10,9 +10,10 @@ for (let i = 0; i < 256; i++) {
 container.addEventListener('mouseover', (e) => {
     const target = e.target;
 
-    if (target.className !== "container" && target.classList.length === 0) {
+    if (target.classList.length === 0) {
         target.className = "hovered";
         target.style.opacity = "0.1";
+
     } else if (target.className === "hovered") {
         let opacityValue = Number(getComputedStyle(target).opacity);
         target.style.opacity = `${opacityValue += 0.1}`;
