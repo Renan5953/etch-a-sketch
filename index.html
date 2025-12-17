@@ -8,8 +8,19 @@
     <script src="./script.js" defer></script>
 </head>
 <body>
-    <button class="proportion">Adjust grid size</button>
-    <button class="clear">Clear grid</button>
+    <div class="controls">
+        <button class="proportion">Adjust grid size</button>
+        <button class="clear">Clear grid</button>
+        <div>
+            <label for="opacity-factor">Darkening factor:</label>
+            <select id="opacity-factor">
+                <option value="0.1">10%</option>
+                <option value="0.2">20%</option>
+                <option value="0.5">50%</option>
+                <option value="1">100%</option>
+            </select>
+        </div>
+    </div>
     <div class="container"></div>
 </body>
 </html>

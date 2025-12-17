@@ -1,6 +1,7 @@
 const proportion = document.querySelector(".proportion");
 const clearBtn = document.querySelector(".clear");
 const container = document.querySelector(".container");
+const select = document.querySelector("select");
 
 for (let i = 0; i < 256; i++) {
     const block = document.createElement("div");
@@ -12,11 +13,14 @@ container.addEventListener('mouseover', (e) => {
 
     if (target.classList.length === 0) {
         target.className = "hovered";
-        target.style.opacity = "0.1";
+        target.style.opacity = select.value;
 
     } else if (target.className === "hovered") {
         let opacityValue = Number(getComputedStyle(target).opacity);
-        target.style.opacity = `${opacityValue += 0.1}`;
+
+        if (opacityValue >= 1) {return;}
+
+        target.style.opacity = `${opacityValue += +select.value}`;
     }
 });
 
