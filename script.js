@@ -16,23 +16,23 @@ container.addEventListener('mouseover', (e) => {
         target.style.opacity = select.value;
 
     } else if (target.className === "hovered") {
-        let opacityValue = Number(getComputedStyle(target).opacity);
+        let opacityValue = Number(target.style.opacity);
 
-        if (opacityValue >= 1) {return;}
+        if (opacityValue >= 1) return;
 
-        target.style.opacity = `${opacityValue += +select.value}`;
+        target.style.opacity = `${opacityValue += Number(select.value)}`;
     }
 });
 
 proportion.addEventListener('click', () => {
     let value = prompt("Set the grid dimension:");
 
-    if (value === null) {return;}
+    if (value === null) return;
 
     while ((!Number.isInteger(+value)) || +value > 100 || +value <= 0) {
         alert("Enter a positive integer less than or equal to 100.");
         value = prompt("Set the grid dimension:");
-        if (value === null) {return;}
+        if (value === null) return;
     }
 
     container.replaceChildren();

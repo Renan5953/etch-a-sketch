@@ -13,6 +13,7 @@ body {
   flex-direction: column;
   margin: 1rem;
   gap: 1rem;
+  font-family: sans-serif;
 }
 
 .controls {
@@ -24,6 +25,7 @@ body {
 button,
 select {
   width: fit-content;
+  font-family: inherit;
 }
 
 .container {
